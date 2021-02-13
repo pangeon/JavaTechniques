@@ -1,5 +1,5 @@
 
-package generics;
+package pl.cecherz;
 import java.awt.Color;
 import static java.lang.Double.NaN;
 import static java.lang.System.out;

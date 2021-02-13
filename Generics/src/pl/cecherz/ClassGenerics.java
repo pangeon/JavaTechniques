@@ -1,5 +1,5 @@
 
-package generics;
+package pl.cecherz;
 
 import java.sql.Date;
 
