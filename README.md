@@ -13,6 +13,8 @@
 
 ### Observer Pattern
 
+#### Cave
+
 ###### project inspired by [Wiki site](https://en.wikipedia.org/wiki/Observer_pattern#Java)
 
 ```
@@ -26,6 +28,18 @@ all observers of the event's occurrence, in the form of an invocation of their '
 <br />
 
 ![text](ObserverPattern/observer_example_uml.png)
+
+#### Mailer
+
+###### project inspired by site [HowDoInJava](https://howtodoinjava.com/design-patterns/behavioral/observer-design-pattern/)
+
+```
+The flow is very simple to understand. Application creates the concrete subject object. All concrete observers 
+register themselves to be notified for any further update in the state of subject.
+```
+<br />
+
+![text](ObserverPattern/observer-pattern-arch.jpg)
 
 ---
 
