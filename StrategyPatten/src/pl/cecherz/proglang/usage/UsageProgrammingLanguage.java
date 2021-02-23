@@ -1,5 +1,5 @@
 package pl.cecherz.proglang.usage;
 
 public interface UsageProgrammingLanguage {
-    void setApplications(Applications applications);
+    void setInternetApplications(Applications applications);
 }

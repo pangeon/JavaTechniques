@@ -9,13 +9,13 @@ import pl.cecherz.proglang.usage.UsageProgrammingLanguage;
 
 public class ProgrammingLang implements TypesStrategy, ParadigmStrategy, UsageProgrammingLanguage {
 
-    TypesStrategy typesStrategy;
-    ParadigmStrategy paradigmStrategy;
+    public TypesStrategy typesStrategy;
+    public ParadigmStrategy paradigmStrategy;
     UsageProgrammingLanguage usage;
 
     @Override
-    public void defineAllTypesInLang(Type[] types) {
-        typesStrategy.defineAllTypesInLang(types);
+    public void defineAllPrimitiveTypesInLang(Type[] types) {
+        typesStrategy.defineAllPrimitiveTypesInLang(types);
     }
 
     @Override
@@ -24,7 +24,7 @@ public class ProgrammingLang implements TypesStrategy, ParadigmStrategy, UsagePr
     }
 
     @Override
-    public void setApplications(Applications applications) {
-        usage.setApplications(applications);
+    public void setInternetApplications(Applications applications) {
+        usage.setInternetApplications(applications);
     }
 }
