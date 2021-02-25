@@ -43,3 +43,10 @@ register themselves to be notified for any further update in the state of subjec
 
 ---
 
+#### Strategy Pattern
+
+Programs use **Junit 4**. If you can show result you must 
+add [external lib](https://www.jetbrains.com/help/idea/library.html) to project.
+
+###### Junit 4 - specification on site: [here](https://junit.org/junit4/)
+

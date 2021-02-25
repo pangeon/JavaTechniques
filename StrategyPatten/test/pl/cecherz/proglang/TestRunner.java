@@ -4,6 +4,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import pl.cecherz.proglang.paradigm.ParadigmOOPTest;
 import pl.cecherz.proglang.types.PrimaryTypeJavaTest;
+import pl.cecherz.proglang.types.WrappersJavaTest;
 import pl.cecherz.proglang.usage.ApplicationsTest;
 
 @RunWith(Suite.class)
@@ -11,7 +12,8 @@ import pl.cecherz.proglang.usage.ApplicationsTest;
 @Suite.SuiteClasses({
         ParadigmOOPTest.class,
         PrimaryTypeJavaTest.class,
-        ApplicationsTest.class
+        ApplicationsTest.class,
+        WrappersJavaTest.class
 })
 public class TestRunner {
 
