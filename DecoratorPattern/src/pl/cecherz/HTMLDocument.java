@@ -2,9 +2,14 @@ package pl.cecherz;
 
 abstract class HTMLDocument implements WWWPageContent {
 
-    protected WebContent htmlContent;
+    protected WebContent htmlContentSection;
 
-    public HTMLDocument(WebContent htmlContent) {
-        this.htmlContent = htmlContent;
+    public HTMLDocument(WebContent htmlContentSection) {
+        this.htmlContentSection = htmlContentSection;
     }
+
+
+
+
+
 }

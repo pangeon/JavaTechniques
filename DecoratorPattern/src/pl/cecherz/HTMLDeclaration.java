@@ -1,13 +1,10 @@
 package pl.cecherz;
 
-/* TODO: I want add many HTML tags to section body. */
-public class HTMLBody extends HTMLDocument {
-
-    public HTMLBody(WebContent htmlContent) {
+public class HTMLDeclaration extends HTMLDocument {
+    public HTMLDeclaration(WebContent htmlContent) {
         super(htmlContent);
     }
 
-    /* TODO: I want delete unnecessary methods . */
     @Override
     public String setTextContent(String text) {
         return null;
@@ -25,10 +22,6 @@ public class HTMLBody extends HTMLDocument {
 
     @Override
     public String connectHeadAndBodySection(String headSection, String bodySection) {
-        return null;
-    }
-
-    public String wrapHTMLToBody(String wrapTag, String textContent) {
-        return "<body>"+ htmlContentSection.wrapToHTML(wrapTag, textContent) + "</body>";
+        return htmlContentSection.connectHeadAndBodySection(headSection, bodySection);
     }
 }

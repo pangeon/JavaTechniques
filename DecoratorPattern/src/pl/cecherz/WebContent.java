@@ -12,7 +12,42 @@ public class WebContent implements WWWPageContent {
 
     @Override
     public String wrapToHTML(String wrapTag, String textContent) {
-        String endWrapTag = wrapTag.charAt(0) + "/" + wrapTag.substring(1);
-        return wrapTag + setTextContent(textContent) + endWrapTag;
+        String startWrapTag;
+        String endWrapTag;
+
+        if (textContent.equals("")) {
+            startWrapTag = "<" + wrapTag;
+            endWrapTag = ">";
+        } else {
+            startWrapTag = "<" + wrapTag + ">";
+            endWrapTag = "</" + wrapTag + ">";
+        }
+        return startWrapTag + setTextContent(textContent) + endWrapTag;
+    }
+
+    @Override
+    public String wrapToHTML(String wrapTag, String attribute, String attributeValue, String textContent) {
+
+        String startWrapTag;
+        String endWrapTag;
+        String tagProperties = attribute + "=\"" + attributeValue + "\"";
+
+        if (textContent.equals("")) {
+            startWrapTag = "<" + wrapTag + " " + tagProperties;
+            endWrapTag = ">";
+        } else {
+            startWrapTag = "<" + wrapTag + " " + tagProperties + ">";
+            endWrapTag = "</" + wrapTag + ">";
+        }
+        return startWrapTag + setTextContent(textContent) + endWrapTag;
+    }
+
+    @Override
+    public String connectHeadAndBodySection(String headSection, String bodySection) {
+        String doctype = "<!DOCTYPE html>";
+        String startWrapTag = "<html>";
+        String endWrapTag = "</html>";
+
+        return doctype + startWrapTag + headSection + bodySection + endWrapTag;
     }
 }

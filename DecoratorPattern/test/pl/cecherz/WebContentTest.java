@@ -1,8 +1,9 @@
 package pl.cecherz;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import static pl.cecherz.TestUtil.checkAndPrint;
 
 public class WebContentTest {
 
@@ -15,15 +16,37 @@ public class WebContentTest {
 
     @Test
     public void wrapTextContentToHTML_assertEquals() {
-        String tag = webContent.wrapToHTML("<span>", "Hello");
-        Assert.assertEquals("<span>Hello</span>", tag);
-        System.out.println(tag);
+        String tag = webContent.wrapToHTML("span", "Hello");
+        checkAndPrint("<span>Hello</span>", tag);
     }
+    @Test
+    public void wrapTextContentToHTML_br_assertEquals() {
+        String tag = webContent.wrapToHTML("br", "");
+        checkAndPrint("<br>", tag);
+    }
+
+    @Test
+    public void wrapTextContentToHTMLAndAddAttribute_id_assertEquals() {
+        String tag = webContent.wrapToHTML("span", "id", "emphasize", "Hello");
+        checkAndPrint("<span id=\"emphasize\">Hello</span>", tag);
+    }
+
+    @Test
+    public void wrapTextContentToHTMLAndAddAttribute_class_assertEquals() {
+        String tag = webContent.wrapToHTML("span", "class", "block-12", "Hello");
+        checkAndPrint("<span class=\"block-12\">Hello</span>", tag);
+    }
+
+    @Test
+    public void wrapTextContentToHTMLAndAddAttribute_meta_assertEquals() {
+        String tag = webContent.wrapToHTML("meta", "charset", "UTF-8", "");
+        checkAndPrint("<meta charset=\"UTF-8\">", tag);
+    }
+
     @Test
     public void setTextContent_assertEquals() {
         String text = webContent.setTextContent("Hello");
-        Assert.assertEquals("Hello", text);
-        System.out.println(text);
+        checkAndPrint("Hello", text);
     }
 
 }
