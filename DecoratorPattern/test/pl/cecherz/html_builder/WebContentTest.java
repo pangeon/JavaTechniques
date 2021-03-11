@@ -1,9 +1,9 @@
-package pl.cecherz;
+package pl.cecherz.html_builder;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import static pl.cecherz.TestUtil.checkAndPrint;
+import static pl.cecherz.html_builder.TestUtil.checkAndPrint;
 
 public class WebContentTest {
 

@@ -1,4 +1,4 @@
-package pl.cecherz;
+package pl.cecherz.html_builder;
 
 import org.junit.Assert;
 

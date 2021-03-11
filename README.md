@@ -45,6 +45,20 @@ register themselves to be notified for any further update in the state of subjec
 
 ### Strategy Pattern
 
+#### ProgLang
+You can describe programming lang attribute.
+
+---
+
+### Decorator Pattern
+
+#### HTML Builder
+Application allow build HTML files from Java object.
+
+---
+
+### Utils
+
 Programs use **Junit 4**. If you can show result you must 
 add [external lib](https://www.jetbrains.com/help/idea/library.html) to project.
 

@@ -1,4 +1,4 @@
-package pl.cecherz;
+package pl.cecherz.html_builder;
 
 /* TODO: I want add many HTML tags to section body. */
 public class HTMLBody extends HTMLDocument {

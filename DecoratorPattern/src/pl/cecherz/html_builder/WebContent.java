@@ -1,4 +1,4 @@
-package pl.cecherz;
+package pl.cecherz.html_builder;
 
 public class WebContent implements WWWPageContent {
 
