@@ -7,4 +7,17 @@ public class TestUtil {
         Assert.assertEquals(passedValue, expectedValue);
         System.out.println(passedValue);
     }
+    public static void checkFalseAndPrint(String passedValue, String expectedValue) {
+        Assert.assertNotEquals(passedValue, expectedValue);
+        System.out.println(passedValue);
+    }
+    public static String multiString(String stringToMultiplication, int counter) {
+        int i = 0;
+        String concatString = "";
+        while (i < counter) {
+            concatString += stringToMultiplication;
+            i++;
+        }
+        return concatString;
+    }
 }

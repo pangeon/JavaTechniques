@@ -3,65 +3,75 @@ package pl.cecherz.book_magazine;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.List;
+import static pl.cecherz.book_magazine.TestUtil.*;
 
 public class BookMagazineTest {
-    private List<String> authors;
-    private String title;
-    private Integer edition;
-    private String placeOfPublication;
-    private String publishingHouse;
-    private Calendar yearOfPublishing;
-    private Integer numberOfPages;
-    private Long ISBN;
+
+    private BookMagazine magazine;
+    private Book item1;
+    private Book item2;
+    private Book item3;
+    private Book item4;
+
+    String expectedItem1 = "1 | empty | empty | empty | empty | 0 | empty | empty | 1-1-1 | 0 | 0";
+    String expectedItem2 = "2 | empty | empty | empty | empty | 0 | empty | empty | 1-1-1 | 0 | 0";
+    String expectedItem3 = "3 | empty | empty | empty | empty | 0 | empty | empty | 1-1-1 | 0 | 0";
+    String expectedItem4 = "4 | empty | empty | empty | empty | 0 | empty | empty | 1-1-1 | 0 | 0";
 
     @Before
     public void init() {
-        authors = new ArrayList<>();
-        authors.add("Horstmann Cay S.");
-        authors.add("Cornell Gary");
-        title = "Java. Podstawy";
+        magazine = new BookMagazine();
+        item1 = new Book();
+        item2 = new Book();
+        item3 = new Book();
+        item4 = new Book();
 
-        edition = 9;
-        placeOfPublication = "Gliwice";
-        publishingHouse = "Helion";
-        yearOfPublishing = Calendar.getInstance();
-        yearOfPublishing.set(2013, Calendar.DECEMBER, 2);
-        numberOfPages = 864;
-        ISBN = 9788328324800L;
-    }
-
-    @Test
-    public void test() {
-        BookMagazine magazine = new BookMagazine();
-        Book javaBook = new Book();
-
-        authors = new ArrayList<>();
-        authors.add("Horstmann Cay S.");
-        authors.add("Cornell Gary");
-        title = "Java. Podstawy";
-
-        edition = 9;
-        placeOfPublication = "Gliwice";
-        publishingHouse = "Helion";
-        yearOfPublishing = Calendar.getInstance();
-        yearOfPublishing.set(2013, Calendar.DECEMBER, 2);
-        numberOfPages = 864;
-        ISBN = 9788328324800L;
-
-
-        magazine.addBook(javaBook);
-        magazine.printBookList();
+        item1.id(1);
+        item2.id(2);
+        item3.id(3);
+        item4.id(4);
 
     }
     @Test
-    public void test2() {
-        BookMagazine magazine = new BookMagazine();
-        Book javaBook = new Book();
+    public void createEmptyCollectionBooksItemsSuccess_addBook() {
+        magazine.addBook(item1);
+        magazine.addBook(item2);
+        magazine.addBook(item3);
+        magazine.addBook(item4);
 
+        checkAndPrint(magazine.getBook(0).toString(), expectedItem1);
+        checkAndPrint(magazine.getBook(1).toString(), expectedItem2);
+        checkAndPrint(magazine.getBook(2).toString(), expectedItem3);
+        checkAndPrint(magazine.getBook(3).toString(), expectedItem4);
     }
 
+    @Test
+    public void createEmptyCollectionBooksItemsSuccess_addAllBooks() {
+        magazine.addAllBooks(item1, item2, item3, item4);
+
+        checkAndPrint(magazine.getBook(0).toString(), expectedItem1);
+        checkAndPrint(magazine.getBook(1).toString(), expectedItem2);
+        checkAndPrint(magazine.getBook(2).toString(), expectedItem3);
+        checkAndPrint(magazine.getBook(3).toString(), expectedItem4);
+    }
+    @Test
+    public void removeEmptyItemsInCollectionBooks() {
+        magazine.addAllBooks(item1, item2, item3, item4);
+
+        magazine.removeBook(item1);
+        magazine.removeBook(item2);
+        magazine.removeBook(item4);
+
+        checkAndPrint(magazine.getBook(0).toString(), expectedItem3);
+    }
+    @Test
+    public void setEmptyItemsInCollectionBooks() {
+        magazine.addAllBooks(item1, item2, item3, item4);
+        magazine.setBook(2, new Book());
+
+        checkFalseAndPrint(magazine.getBook(2).toString(), expectedItem3);
+
+        String expectedItem3 = "0 | empty | empty | empty | empty | 0 | empty | empty | 1-1-1 | 0 | 0";
+        checkAndPrint(magazine.getBook(2).toString(), expectedItem3);
+    }
 }

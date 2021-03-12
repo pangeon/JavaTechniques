@@ -1,6 +1,7 @@
 package pl.cecherz.book_magazine;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class BookMagazine {
@@ -10,8 +11,15 @@ public class BookMagazine {
         return bookStore;
     }
 
+    public Book getBook(int index) {
+        return bookStore.get(index);
+    }
+
     public void addBook(Book bookItem) {
         bookStore.add(bookItem);
+    }
+    public void addAllBooks(Book... books) {
+        Collections.addAll(bookStore, books);
     }
 
     public void removeBook(Book bookItem) {
@@ -28,5 +36,8 @@ public class BookMagazine {
         }
     }
 
-
+    @Override
+    public String toString() {
+        return bookStore.toString();
+    }
 }
