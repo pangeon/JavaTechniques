@@ -1,5 +1,6 @@
 package pl.cecherz.book_magazine;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -53,6 +54,7 @@ public class BookMagazineTest {
         checkAndPrint(magazine.getBook(1).toString(), expectedItem2);
         checkAndPrint(magazine.getBook(2).toString(), expectedItem3);
         checkAndPrint(magazine.getBook(3).toString(), expectedItem4);
+
     }
     @Test
     public void removeEmptyItemsInCollectionBooks() {
@@ -73,5 +75,10 @@ public class BookMagazineTest {
 
         String expectedItem3 = "0 | empty | empty | empty | empty | 0 | empty | empty | 1-1-1 | 0 | 0";
         checkAndPrint(magazine.getBook(2).toString(), expectedItem3);
+    }
+    @Test
+    public void printBookList() {
+        magazine.addAllBooks(item1, item2, item3, item4);
+        magazine.printBookList();
     }
 }

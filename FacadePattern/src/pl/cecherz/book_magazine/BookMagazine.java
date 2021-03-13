@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class BookMagazine {
+
     private final List<Book> bookStore = new ArrayList<>();
 
     public List<Book> getBookList() {
@@ -18,6 +19,7 @@ public class BookMagazine {
     public void addBook(Book bookItem) {
         bookStore.add(bookItem);
     }
+
     public void addAllBooks(Book... books) {
         Collections.addAll(bookStore, books);
     }
@@ -31,9 +33,19 @@ public class BookMagazine {
     }
 
     public void printBookList() {
+        printBookDescriptionHeader();
         for (Book book : bookStore) {
             System.out.println(book);
         }
+    }
+
+    private void printBookDescriptionHeader() {
+        String bookDescriptionHeader =
+                "id :: authors :: trans :: title :: lang :: edition :: " +
+                "plcPub :: pubPrtHouse :: pubDate :: numPages :: ISBN\n" +
+                "---------------------------------------------------------" +
+                "-------------------------------------------------";
+        System.out.println(bookDescriptionHeader);
     }
 
     @Override

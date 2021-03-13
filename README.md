@@ -1,8 +1,14 @@
 # Java Techniques - exercises
 ###### Kamil Cecherz
 
----
+# Description
 
+Repository contain simple programs. Each module shows different programming aspect and various
+techniques to build clean code.
+
+# Content
+
+---
 ### Asymmetric Data And Object
 
 ###### project inspired by publication:
@@ -57,7 +63,14 @@ Application allow build HTML files from Java object.
 
 ---
 
-### Utils
+### Facade Pattern
+
+#### Book Magazine
+API for application which creates books catalog.
+
+---
+
+# Deployment guide
 
 Programs use **Junit 4**. If you can show result you must 
 add [external lib](https://www.jetbrains.com/help/idea/library.html) to project.
